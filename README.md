@@ -18,7 +18,7 @@ npm run build
 npm run preview
 ```
 
-The production files are written directly to the project root: `index.html` and `assets/`. The Vite source entry is `src/index.html`, so running a new build will not overwrite the source page.
+The production files are written directly to the project root: `index.html` and `assets/`. After each build, they are copied to `docs/` for the repository's existing GitHub Pages configuration. The Vite source entry is `src/index.html`, so builds do not overwrite the source page.
 
 ## Edit the content
 
@@ -30,8 +30,8 @@ Import the repository into Vercel. Use the project root as the root directory, `
 
 ## Deploy to GitHub Pages
 
-This project includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml`. It builds the React/Vite app to a temporary `dist/` artifact, sets the repository URL base automatically, and deploys it. A regular `npm run build` still places the production `index.html` and `assets/` in the project root and defaults to `/Abishek_Javadeveloper/`; local development uses `/`.
+The repository is configured to publish from the `docs/` folder on the `main` branch. Run `npm run build`, then commit and push the generated `docs/` files. The build defaults to `/Abishek_Javadeveloper/` for this repository; local development uses `/`.
 
-In the GitHub repository, open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. This is important: the current “Deploy from a branch” configuration is asking Jekyll to read a `docs/` directory, which this project does not have. After changing the source, push to the repository's default branch or run the **Deploy portfolio to GitHub Pages** workflow from the Actions tab.
+In GitHub, keep **Settings → Pages → Build and deployment** set to **Deploy from a branch**, branch `main`, folder `/docs`. The build creates that folder and includes `.nojekyll`, preventing Jekyll from modifying the static Vite output.
 
 The workflow handles repository sites such as `https://<user>.github.io/<repository>/`. For a custom domain or a user site at `https://<user>.github.io/`, change the workflow's `VITE_BASE_PATH` value to `/`.
