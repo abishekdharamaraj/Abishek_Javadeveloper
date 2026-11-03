@@ -30,17 +30,8 @@ Import the repository into Vercel. Use the project root as the root directory, `
 
 ## Deploy to GitHub Pages
 
-For a repository site at `https://<user>.github.io/<repository>/`, build with the repository name as the base path:
+This project includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml`. It builds the React/Vite app, sets the repository URL base automatically, and deploys only the generated `index.html` and `assets/` files.
 
-```sh
-VITE_BASE_PATH=/<repository>/ npm run build
-```
+In the GitHub repository, open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. This is important: the current “Deploy from a branch” configuration is asking Jekyll to read a `docs/` directory, which this project does not have. After changing the source, push to the repository's default branch or run the **Deploy portfolio to GitHub Pages** workflow from the Actions tab.
 
-In Windows PowerShell, set the variable before building:
-
-```powershell
-$env:VITE_BASE_PATH = '/<repository>/'
-npm run build
-```
-
-Publish the repository root (`index.html` and `assets/`) to GitHub Pages. For a custom domain or a user site at `https://<user>.github.io/`, use the default base `/` instead.
+The workflow handles repository sites such as `https://<user>.github.io/<repository>/`. For a custom domain or a user site at `https://<user>.github.io/`, change the workflow's `VITE_BASE_PATH` value to `/`.
