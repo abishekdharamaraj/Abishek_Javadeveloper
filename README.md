@@ -9,7 +9,7 @@
 
 ---
 
-## 👨‍💻 About me
+##About me
 
 - Java Backend Developer with **2+ years** in software development, including **1+ year** building backend systems.
 - I build secure REST APIs, authentication and **role-based access control (RBAC)**, and MySQL-backed modules.
@@ -19,7 +19,7 @@
 
 ---
 
-## 🛠️ Tech stack
+## Tech stack
 
 ### Backend
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -58,7 +58,7 @@ REST APIs · JSON · DTOs · Bean Validation · RBAC · Pagination, Sorting and 
 
 ---
 
-## 💼 Experience
+## Experience
 
 **Java Backend Developer** · Rooks and Brooks Technologies · *Aug 2025 – Present*
 - Built REST APIs, authentication, and role-based access control for Hospital and Factory Management systems using Spring Boot and Spring Security.
@@ -69,7 +69,7 @@ REST APIs · JSON · DTOs · Bean Validation · RBAC · Pagination, Sorting and 
 
 ---
 
-## 🚀 Featured project
+## Featured project
 
 ### 🛒 [E-Commerce Application](https://github.com/abishekdharamaraj/ecommerce)
 A backend storefront with separate **Admin** and **Customer** roles.
@@ -81,7 +81,7 @@ A backend storefront with separate **Admin** and **Customer** roles.
 
 ---
 
-## 🎓 Education and certifications
+## Education and certifications
 
 - B.E. in Computer Science and Engineering, Prathyusha Engineering College (2019 – 2024)
 - Java Programming Masterclass (Udemy)
@@ -89,7 +89,7 @@ A backend storefront with separate **Admin** and **Customer** roles.
 
 ---
 
-## 📫 Let's connect
+## Let's connect
 
 I'm open to Java backend opportunities. Reach me at **abishek21092001@gmail.com** or on [LinkedIn](https://www.linkedin.com/in/abishek-d-416873190).
 
