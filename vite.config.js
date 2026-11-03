@@ -4,6 +4,9 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
+const buildOutput = process.env.VITE_OUT_DIR
+  ? resolve(projectRoot, process.env.VITE_OUT_DIR)
+  : projectRoot;
 
 export default defineConfig(({ command }) => ({
   root: resolve(projectRoot, 'src'),
@@ -12,7 +15,7 @@ export default defineConfig(({ command }) => ({
   // Use root paths during local development; production defaults to this repo's Pages URL.
   base: command === 'serve' ? '/' : process.env.VITE_BASE_PATH || '/Abishek_Javadeveloper/',
   build: {
-    outDir: projectRoot,
-    emptyOutDir: false,
+    outDir: buildOutput,
+    emptyOutDir: buildOutput !== projectRoot,
   },
 }));
