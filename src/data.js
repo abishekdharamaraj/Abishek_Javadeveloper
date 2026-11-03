@@ -18,7 +18,7 @@ export const profile = {
 export const links = {
   github: 'https://github.com/abishekdharamaraj',
   linkedin: 'https://www.linkedin.com/in/abishek-d-416873190',
-  resume: 'https://drive.google.com/file/d/1jHbCzSpSzJ5wIS2mieBhv5C_bwxfZS3C/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/10Wf_buUiFkgvI9S80SV2QVZm21c3vew5/view?usp=sharing',
 };
 
 export const navigation = [
