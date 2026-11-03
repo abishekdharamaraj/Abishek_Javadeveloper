@@ -1,13 +1,46 @@
-# Abishek D — Portfolio
+# Abishek D — Developer portfolio
 
-The portfolio is a single standalone page. Open `index.html` directly in a browser, or publish that file to any static host. No build step or JavaScript framework is required. Google Fonts load from their CDN; system fallbacks are included.
+A responsive, single-page React portfolio with a restrained editorial layout, Framer Motion transitions, and a persistent light/dark theme.
 
-## Edit content
+## Run locally
 
-Update the page copy directly in `index.html`. The sections are marked with IDs: `about`, `skills`, `experience`, `projects`, and `contact`.
+Requires Node.js 20.19+ or 22.12+.
 
-## Add a project
+```sh
+npm install
+npm run dev
+```
 
-Copy the `<article class="project-row">…</article>` inside the Projects section. Replace its heading, description, technology tags, and GitHub URL. The small inline SVG symbols are defined near the top of the document and can be reused with `<svg><use href="#icon-spring"/></svg>`.
+Create and preview a production build:
 
-Theme colors and light/dark variants are CSS custom properties near the beginning of the `<style>` block. Theme preference is stored in local storage when available.
+```sh
+npm run build
+npm run preview
+```
+
+The production files are written directly to the project root: `index.html` and `assets/`. The Vite source entry is `src/index.html`, so running a new build will not overwrite the source page.
+
+## Edit the content
+
+Update profile details, links, skills, experience, and projects in `src/data.js`. Add a project object to the `projects` array; it will be rendered automatically. Use an icon name available in `src/components/Icon.jsx` for skill and technology icons.
+
+## Deploy to Vercel
+
+Import the repository into Vercel. Use the project root as the root directory, `npm run build` as the build command, and `.` as the output directory. The default Vite base path is `/`, so no extra setting is needed.
+
+## Deploy to GitHub Pages
+
+For a repository site at `https://<user>.github.io/<repository>/`, build with the repository name as the base path:
+
+```sh
+VITE_BASE_PATH=/<repository>/ npm run build
+```
+
+In Windows PowerShell, set the variable before building:
+
+```powershell
+$env:VITE_BASE_PATH = '/<repository>/'
+npm run build
+```
+
+Publish the repository root (`index.html` and `assets/`) to GitHub Pages. For a custom domain or a user site at `https://<user>.github.io/`, use the default base `/` instead.

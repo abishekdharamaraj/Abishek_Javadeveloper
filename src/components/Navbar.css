@@ -1,0 +1,33 @@
+.site-header {
+  position: fixed;
+  z-index: 80;
+  inset: 0 0 auto;
+  padding-top: env(safe-area-inset-top, 0px);
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--page) 91%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.nav-inner { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 24px; }
+.monogram { font-size: 24px; font-style: italic; letter-spacing: -0.08em; line-height: 1; }
+.monogram span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: clamp(24px, 4vw, 56px); }
+.nav-links a { position: relative; padding: 8px 0; color: var(--muted); font-size: 13px; font-weight: 400; transition: color 0.3s ease; }
+.nav-links a::after { position: absolute; right: 0; bottom: 3px; left: 0; height: 1px; content: ''; transform: scaleX(0); transform-origin: left; background: var(--gold); transition: transform 0.55s var(--ease); }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-social, .theme-toggle, .menu-toggle { display: inline-grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--hairline); border-radius: 50%; color: var(--text); background: transparent; cursor: pointer; transition: border-color 0.3s ease, color 0.3s ease; }
+.nav-social:hover, .theme-toggle:hover, .menu-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.nav-social .icon, .theme-toggle .icon, .menu-toggle .icon { width: 17px; height: 17px; }
+.menu-toggle { display: none; }
+.mobile-nav { position: absolute; top: 100%; right: 0; left: 0; display: grid; padding: 6px 24px 12px; border-bottom: 1px solid var(--hairline); background: var(--page); }
+.mobile-nav a { padding: 13px 0; border-bottom: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
+.mobile-nav a:last-child { border-bottom: 0; }
+
+@media (max-width: 700px) {
+  .nav-inner { min-height: 70px; }
+  .nav-links, .nav-social { display: none; }
+  .menu-toggle { display: inline-grid; }
+}

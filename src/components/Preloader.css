@@ -1,0 +1,22 @@
+.preloader {
+  position: fixed;
+  z-index: 120;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--page);
+}
+
+.preloader-mark {
+  width: min(154px, 42vw);
+  overflow: visible;
+  color: var(--gold);
+}
+
+.preloader-mark path {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
+}

@@ -1,0 +1,36 @@
+.terminal-card {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  width: min(440px, 39vw);
+  padding: 18px 20px 19px;
+  border: 1px solid var(--hairline);
+  background: var(--card);
+}
+
+.terminal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.terminal-dots { display: flex; gap: 5px; }
+.terminal-dots i { width: 5px; height: 5px; border: 1px solid var(--hairline-strong); border-radius: 50%; }
+.terminal-lines { display: grid; gap: 4px; color: var(--muted); font: 10px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.terminal-lines p { margin: 0; }
+.terminal-command, .terminal-ready { color: var(--text); }
+.terminal-info { color: var(--gold); }
+.terminal-cursor { display: inline-block; width: 6px; height: 12px; margin-left: 5px; vertical-align: -2px; background: var(--gold); animation: cursor-blink 1s steps(2, start) infinite; }
+
+@keyframes cursor-blink { to { opacity: 0; } }
+
+@media (max-width: 620px) {
+  .terminal-card { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 32px; padding: 14px; }
+  .terminal-lines { font-size: 9px; }
+}
